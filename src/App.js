@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, MapPin, Package, Mail, Instagram, ChevronRight } from 'lucide-react';
+import { Menu, X, MapPin, Mail, Instagram, ChevronRight, Camera, Utensils, Landmark, ShoppingBag } from 'lucide-react';
 
 export default function KoreaTravelGuide() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,6 +26,7 @@ export default function KoreaTravelGuide() {
             <div className="hidden md:flex space-x-8">
               <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition">Home</button>
               <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition">Services</button>
+              <button onClick={() => scrollToSection('tours')} className="text-gray-700 hover:text-blue-600 transition">Tour Options</button>
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition">Contact</button>
             </div>
 
@@ -45,6 +46,7 @@ export default function KoreaTravelGuide() {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <button onClick={() => scrollToSection('home')} className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-50">Home</button>
               <button onClick={() => scrollToSection('services')} className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-50">Services</button>
+              <button onClick={() => scrollToSection('tours')} className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-50">Tour Options</button>
               <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-50">Contact</button>
             </div>
           </div>
@@ -70,89 +72,134 @@ export default function KoreaTravelGuide() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Main Service Section */}
       <section id="services" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
-            Our Services
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8">
+            Seoul Travel Guide Service
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Service 1 */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-              <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <MapPin className="text-white" size={32} />
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 sm:p-12 rounded-2xl shadow-xl">
+            <div className="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <MapPin className="text-white" size={40} />
+            </div>
+            
+            <p className="text-xl text-gray-700 text-center leading-relaxed mb-8">
+              Explore Seoul like never before with a knowledgeable local guide. From popular tourist spots to hidden local favorites, I'll show you the real Seoul that most tourists never see.
+            </p>
+            
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              <div className="bg-white p-4 rounded-lg shadow">
+                <div className="flex items-start">
+                  <span className="text-blue-600 mr-3 text-xl">✓</span>
+                  <span className="text-gray-700">Customized itineraries based on your interests</span>
+                </div>
               </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">Seoul Travel Guide Service</h4>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Explore Seoul like never before with a knowledgeable local guide. From popular tourist spots to hidden local favorites, I'll show you the real Seoul.
-              </p>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>Customized itineraries based on your interests</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>Local restaurants and authentic Korean cuisine</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>Cultural insights and historical context</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>Photo spots and Instagram-worthy locations</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>Any kind of councel available</span>
-                </li>
-              </ul>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <div className="flex items-start">
+                  <span className="text-blue-600 mr-3 text-xl">✓</span>
+                  <span className="text-gray-700">Local restaurants and authentic Korean cuisine</span>
+                </div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <div className="flex items-start">
+                  <span className="text-blue-600 mr-3 text-xl">✓</span>
+                  <span className="text-gray-700">Cultural insights and historical context</span>
+                </div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <div className="flex items-start">
+                  <span className="text-blue-600 mr-3 text-xl">✓</span>
+                  <span className="text-gray-700">Photo spots and Instagram-worthy locations</span>
+                </div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <div className="flex items-start">
+                  <span className="text-blue-600 mr-3 text-xl">✓</span>
+                  <span className="text-gray-700">Shopping guidance and local markets</span>
+                </div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <div className="flex items-start">
+                  <span className="text-blue-600 mr-3 text-xl">✓</span>
+                  <span className="text-gray-700">Any kind of counsel available</span>
+                </div>
+              </div>
             </div>
 
-            {/* Service 2 */}
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-              <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Package className="text-white" size={32} />
-              </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">Luggage Delivery & Storage Service</h4>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Travel light and enjoy Seoul hassle-free. We'll take care of your luggage so you can focus on making memories.
-              </p>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-purple-600 mr-2">✓</span>
-                  <span>Airport to hotel luggage delivery</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-600 mr-2">✓</span>
-                  <span>Secure luggage storage during your stay</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-600 mr-2">✓</span>
-                  <span>Flexible pick-up and drop-off options</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-600 mr-2">✓</span>
-                  <span>Safe and reliable service</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-600 mr-2">✓</span>
-                  <span>Storage: ₩4,000 per bag for one day</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-600 mr-2">✓</span>
-                  <span>Delivery: ₩15,000 per bag</span>
-                </li>
-              </ul>
+            <div className="text-center">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition transform hover:scale-105 inline-flex items-center"
+              >
+                Book Your Tour
+                <ChevronRight className="ml-2" size={20} />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Tour Options Section */}
+      <section id="tours" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4">
+            What Can We Explore Together?
+          </h3>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Every tour is customized to your interests. Here are some popular options:
+          </p>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Landmark className="text-blue-600" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 text-center">Historic Sites</h4>
+              <p className="text-gray-600 text-center text-sm">
+                Palaces, temples, traditional villages, and cultural heritage sites
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Utensils className="text-green-600" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 text-center">Food Tours</h4>
+              <p className="text-gray-600 text-center text-sm">
+                Street food, local markets, traditional restaurants, and hidden gems
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+              <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Camera className="text-pink-600" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 text-center">Instagram Spots</h4>
+              <p className="text-gray-600 text-center text-sm">
+                Trendy cafes, photo zones, colorful streets, and scenic viewpoints
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <ShoppingBag className="text-purple-600" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 text-center">Shopping</h4>
+              <p className="text-gray-600 text-center text-sm">
+                Fashion districts, cosmetics, souvenirs, and local boutiques
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center text-gray-600 mt-8">
+            Or mix and match! Let me know your interests and I'll create the perfect itinerary for you.
+          </p>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
             Why Choose Us?
@@ -165,8 +212,8 @@ export default function KoreaTravelGuide() {
             </div>
             <div className="text-center">
               <div className="text-4xl mb-4">💬</div>
-              <h4 className="text-xl font-semibold mb-2">English available</h4>
-              <p className="text-gray-600">English communication throughout your journey</p>
+              <h4 className="text-xl font-semibold mb-2">English Available</h4>
+              <p className="text-gray-600">Clear English communication throughout your journey</p>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-4">🎯</div>
@@ -231,7 +278,7 @@ export default function KoreaTravelGuide() {
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-gray-400">© 2025 Korea Travel Guide. Making your Seoul journey unforgettable.</p>
-          <p className="text-gray-400">koreatravelguide0@gmail.com</p>
+          <p className="text-gray-400 mt-2">koreatravelguide0@gmail.com</p>
         </div>
       </footer>
     </div>
