@@ -19,6 +19,11 @@ export default function KoreaTravelGuide() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
+              <img 
+                src="/Korea_guide.png" 
+                alt="Korea Guide Logo" 
+                className="h-10 w-10 mr-3"
+              />
               <h1 className="text-2xl font-bold text-blue-600">Korea Travel Guide</h1>
             </div>
             
